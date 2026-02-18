@@ -1,57 +1,122 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" class="mode-auto">
 <head>
-  <meta charset="utf-8">
+  <meta charset="utf-8" />
   <title>Notes — Charlie A. Johnson</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Short notes on decision systems, data, feedback loops, and writing." />
 
-  <meta name="description" content="Short notes on decision systems, data, feedback loops, and writing.">
-
-  <link rel="stylesheet" href="/style.css">
+  <link rel="stylesheet" href="/style.css" />
 </head>
+
 <body>
-  <main>
-    <p><a href="/">← Home</a></p>
+  <header class="header">
+    <div class="container">
+      <a class="name-link" href="/" aria-label="Home">
+        <h1 class="name">Charlie A. Johnson</h1>
+      </a>
 
-    <h1>Notes</h1>
+      <div class="toggle">
+        <span class="toggle-label-text" aria-hidden="true">Theme</span>
+        <button id="themeToggle" class="toggle-button" type="button" aria-label="Toggle dark mode">
+          <span class="toggle-knob" aria-hidden="true"></span>
+        </button>
+      </div>
+    </div>
+  </header>
 
-    <p>
-      Short, low-ceremony notes. Mostly about decision systems, feedback, and writing.
-      Occasionally drafts. Occasionally diagrams. Always in progress.
-    </p>
+  <main class="main">
+    <article class="container">
+      <p class="small"><a href="/">← Home</a></p>
 
-    <h2>Selected</h2>
-    <ul>
-      <!-- Replace # with real URLs (e.g., /notes/arctic-temporal-systems.html) -->
-      <li>
-        <a href="#">Why the Arctic breaks temporal systems</a>
-        <small> — 2026-01-29</small>
-      </li>
-      <li>
-        <a href="#">A mechanism-design observation on postgraduate funding</a>
-        <small> — 2026-01-27</small>
-      </li>
-      <li>
-        <a href="#">Designing calm systems at scale</a>
-        <small> — 2026-01-24</small>
-      </li>
-    </ul>
+      <section class="section">
+        <h2 class="h" style="font-size:28px; margin-top:6px;">Notes</h2>
 
-    <h2>Index</h2>
-    <p>
-      If you’re looking for something specific, start here. (This will grow slowly.)
-    </p>
+        <p class="lead" style="margin-top:10px;">
+          Short, low-ceremony notes. Mostly about decision systems, feedback, and writing.
+          Occasionally drafts. Occasionally diagrams. Always in progress.
+        </p>
+      </section>
 
-    <ul>
-      <li><a href="#">Decision systems</a></li>
-      <li><a href="#">Feedback & incentives</a></li>
-      <li><a href="#">Tooling & workflows</a></li>
-      <li><a href="#">Writing</a></li>
-    </ul>
+      <section class="section">
+        <h2 class="h">Selected</h2>
+        <ul class="bullet">
+          <!-- Replace # with real URLs (e.g., /notes/arctic-temporal-systems.html) -->
+          <li>
+            <a href="#">Why the Arctic breaks temporal systems</a>
+            <span class="muted"> — 2026-01-29</span>
+          </li>
+          <li>
+            <a href="#">A mechanism-design observation on postgraduate funding</a>
+            <span class="muted"> — 2026-01-27</span>
+          </li>
+          <li>
+            <a href="#">Designing calm systems at scale</a>
+            <span class="muted"> — 2026-01-24</span>
+          </li>
+        </ul>
+      </section>
+
+      <section class="section">
+        <h2 class="h">Index</h2>
+        <p class="muted" style="margin-top:0;">
+          If you’re looking for something specific, start here. (This will grow slowly.)
+        </p>
+
+        <ul class="bullet">
+          <li><a href="#">Decision systems</a></li>
+          <li><a href="#">Feedback & incentives</a></li>
+          <li><a href="#">Tooling & workflows</a></li>
+          <li><a href="#">Writing</a></li>
+        </ul>
+      </section>
+    </article>
   </main>
 
-  <footer>
-    <p><small>Last updated 2026</small></p>
+  <footer class="footer">
+    <div class="container">
+      <p class="small muted">Last updated 2026</p>
+    </div>
   </footer>
+
+  <script>
+    // Theme toggle (shared with homepage)
+    (function () {
+      const STORAGE_KEY = "theme";
+      const root = document.documentElement;
+      const btn = document.getElementById("themeToggle");
+
+      function applyTheme(theme, persist = true) {
+        root.classList.toggle("mode-dark", theme === "dark");
+        root.classList.toggle("mode-light", theme === "light");
+        if (persist) localStorage.setItem(STORAGE_KEY, theme);
+        btn?.setAttribute("aria-pressed", theme === "dark" ? "true" : "false");
+      }
+
+      function getInitialTheme() {
+        const saved = localStorage.getItem(STORAGE_KEY);
+        if (saved === "dark" || saved === "light") return saved;
+        const prefersDark = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
+        return prefersDark ? "dark" : "light";
+      }
+
+      applyTheme(getInitialTheme(), false);
+
+      btn?.addEventListener("click", () => {
+        const isDark = root.classList.contains("mode-dark");
+        applyTheme(isDark ? "light" : "dark", true);
+      });
+
+      const mql = window.matchMedia ? window.matchMedia("(prefers-color-scheme: dark)") : null;
+      if (mql) {
+        mql.addEventListener("change", (e) => {
+          const saved = localStorage.getItem(STORAGE_KEY);
+          if (saved !== "dark" && saved !== "light") {
+            applyTheme(e.matches ? "dark" : "light", false);
+          }
+        });
+      }
+    })();
+  </script>
 </body>
 </html>
