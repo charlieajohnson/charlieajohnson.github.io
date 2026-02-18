@@ -33,6 +33,7 @@
 
   <main class="main">
     <article class="container">
+
       <!-- Intro -->
       <section class="section">
         <p class="meta"><strong>Researcher</strong> · Birmingham, UK</p>
@@ -40,7 +41,6 @@
         <p class="lead">
           I work on formal models of complex systems under uncertainty — especially where
           causality, time, and constraints shape what can be inferred and what actions remain feasible.
-          <span class="intro-period">.</span>
           <span id="introEllipsis" class="intro-ellipsis"> … </span>
           <button id="introMore" class="link-button" type="button" aria-expanded="false">More</button>
         </p>
@@ -48,7 +48,7 @@
         <div id="introMoreContent" class="intro-more" hidden>
           <p>
             Recent work includes: (i) interval-based representations of event time for intermittently connected
-            sensing systems (preserving provenance + queryable uncertainty), (ii) feasibility-set modelling of
+            sensing systems (preserving provenance and queryable uncertainty), (ii) feasibility-set modelling of
             coordination under latency via a set-valued mapping <span class="mono">ECB(C, L, θ)</span> and threshold exclusion
             results, and (iii) testable hypotheses for coordination via continuous phase gradients.
           </p>
@@ -60,7 +60,7 @@
             <span class="dot">·</span>
             <a href="/notes">Notes</a>
             <span class="dot">·</span>
-            <a href="/cv">CV</a>
+            <a href="/assets/cv/Johnson_A_Charlie_CV.pdf">CV</a>
           </p>
         </div>
 
@@ -69,7 +69,7 @@
           <span class="dot">·</span>
           <a href="/notes">Notes</a>
           <span class="dot">·</span>
-          <a href="/cv">CV</a>
+          <a href="/assets/cv/Johnson_A_Charlie_CV.pdf">CV</a>
         </p>
       </section>
 
@@ -77,8 +77,8 @@
       <section class="section">
         <h2 class="h">Focus</h2>
         <ul class="bullet">
-          <li>Formal modelling under uncertainty (invariants, bounds, partial orders)</li>
-          <li>Causal structure and effective connectivity (graphical + statistical reasoning)</li>
+          <li>Formal modelling under uncertainty (invariants, bounds, partial orders, identifiability)</li>
+          <li>Causal structure and effective connectivity (graphical and statistical reasoning)</li>
           <li>Temporal coherence in distributed / intermittently connected sensing systems</li>
           <li>Feasibility boundaries in coordination systems (latency thresholds, delay-sensitive dynamics)</li>
         </ul>
@@ -89,7 +89,7 @@
         <h2 class="h">Writing</h2>
         <ul class="bullet">
           <li><a href="/notes">Notes</a> (working notes, models, and technical memos)</li>
-          <li><a href="/papers">Technical papers</a> (PDFs / preprints)</li>
+          <li><a href="/assets/papers/">Technical papers</a> (PDFs / preprints)</li>
         </ul>
       </section>
 
@@ -97,23 +97,40 @@
       <section class="section">
         <h2 class="h">Selected technical papers</h2>
         <ul class="bullet">
-          <li>
-            <a href="/papers/temporal-coherence" class="paper-title">Temporal Coherence in Long-Horizon, Intermittently Connected Sensor Systems</a>
-            <span class="muted">— interval time, provenance, queryable uncertainty</span>
-          </li>
-          <li>
-            <a href="/papers/ecb-latency" class="paper-title">Latency and the Effective Capital Blueprint (ECB)</a>
-            <span class="muted">— feasibility sets, threshold exclusion, non-compensability</span>
-          </li>
-          <li>
-            <a href="/papers/phase-legibility" class="paper-title">Phase Legibility as Infrastructure</a>
-            <span class="muted">— continuous phase gradients, coordination friction, falsifiable tests</span>
-          </li>
-        </ul>
 
-        <p class="small muted">
-          If you’d prefer direct GitHub links instead of site paths, replace the URLs above with your repo/file URLs.
-        </p>
+          <li>
+            <a class="paper-title"
+               href="/assets/papers/TCLH_Temporal_Coherence_Long_Horizon_Sensor_Systems_Johnson_2026-01.pdf">
+              Temporal Coherence in Long-Horizon, Intermittently Connected Sensor Systems
+            </a>
+            <span class="muted"> — interval time, provenance, queryable uncertainty</span>
+          </li>
+
+          <li>
+            <a class="paper-title"
+               href="/assets/papers/ECB_Latency_and_Effective_Capital_Blueprint_Johnson_2026-01.pdf">
+              Latency and the Effective Capital Blueprint (ECB)
+            </a>
+            <span class="muted"> — feasibility sets, threshold exclusion, non-compensability</span>
+          </li>
+
+          <li>
+            <a class="paper-title"
+               href="/assets/papers/PLI_Phase_Legibility_as_Infrastructure_Johnson_2026-02.pdf">
+              Phase Legibility as Infrastructure
+            </a>
+            <span class="muted"> — continuous phase gradients, coordination friction, falsifiable tests</span>
+          </li>
+
+          <li>
+            <a class="paper-title"
+               href="/assets/papers/GEHOS_Gradient_Encoding_Human_Oversight_Systems_Johnson_2026-02.pdf">
+              Gradient Encoding in Human Oversight Systems (GEHOS)
+            </a>
+            <span class="muted"> — bounded risk encoding, supervisory dynamics, boundary conditions</span>
+          </li>
+
+        </ul>
       </section>
 
       <!-- Projects -->
@@ -125,15 +142,16 @@
         </ul>
       </section>
 
-      <!-- Research / Profiles -->
+      <!-- Elsewhere -->
       <section class="section">
         <h2 class="h">Elsewhere</h2>
         <ul class="bullet">
           <li><a href="https://github.com/charlieajohnson" target="_blank" rel="noreferrer">GitHub</a></li>
-          <li><a href="https://www.linkedin.com/in/charlie-a-johnson" target="_blank" rel="noreferrer">LinkedIn</a> <span class="muted">(add your profile link)</span></li>
-          <li><a href="#" target="_blank" rel="noreferrer">Google Scholar</a> <span class="muted">(optional)</span></li>
+          <li><a href="https://www.linkedin.com/in/charlie-a-johnson" target="_blank" rel="noreferrer">LinkedIn</a></li>
+          <li><a href="#" target="_blank" rel="noreferrer">Google Scholar</a></li>
         </ul>
       </section>
+
     </article>
   </main>
 
@@ -144,16 +162,12 @@
   </footer>
 
   <script>
-    // -----------------------------
-    // Theme toggle (Amodei-inspired)
-    // -----------------------------
     (function () {
       const STORAGE_KEY = "theme";
       const root = document.documentElement;
       const btn = document.getElementById("themeToggle");
 
       function applyTheme(theme, persist = true) {
-        // theme: "dark" | "light"
         root.classList.toggle("mode-dark", theme === "dark");
         root.classList.toggle("mode-light", theme === "light");
         if (persist) localStorage.setItem(STORAGE_KEY, theme);
@@ -163,36 +177,19 @@
       function getInitialTheme() {
         const saved = localStorage.getItem(STORAGE_KEY);
         if (saved === "dark" || saved === "light") return saved;
-
-        // OS preference
-        const prefersDark = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
+        const prefersDark = window.matchMedia &&
+          window.matchMedia("(prefers-color-scheme: dark)").matches;
         return prefersDark ? "dark" : "light";
       }
 
-      // init
       applyTheme(getInitialTheme(), false);
 
-      // click toggle
       btn?.addEventListener("click", () => {
         const isDark = root.classList.contains("mode-dark");
         applyTheme(isDark ? "light" : "dark", true);
       });
-
-      // if user hasn't explicitly chosen, track OS changes
-      const mql = window.matchMedia ? window.matchMedia("(prefers-color-scheme: dark)") : null;
-      if (mql) {
-        mql.addEventListener("change", (e) => {
-          const saved = localStorage.getItem(STORAGE_KEY);
-          if (saved !== "dark" && saved !== "light") {
-            applyTheme(e.matches ? "dark" : "light", false);
-          }
-        });
-      }
     })();
 
-    // -----------------------------
-    // Intro "More" expander
-    // -----------------------------
     (function () {
       const btn = document.getElementById("introMore");
       const content = document.getElementById("introMoreContent");
@@ -209,5 +206,6 @@
       });
     })();
   </script>
+
 </body>
 </html>
