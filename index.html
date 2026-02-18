@@ -1,34 +1,213 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" class="mode-auto">
 <head>
-  <meta charset="utf-8">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
   <title>Charlie A. Johnson</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Researcher. Formal modelling of complex systems under uncertainty: causality, time, constraints, and feedback." />
 
-  <!-- Optional, but nice for link previews -->
-  <meta name="description" content="Researcher. Decision systems, data, and feedback loops in complex environments.">
+  <!-- Open Graph -->
+  <meta property="og:title" content="Charlie A. Johnson" />
+  <meta property="og:description" content="Formal modelling of complex systems under uncertainty: causality, time, constraints, and feedback." />
+  <meta property="og:type" content="website" />
 
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
-  <main>
-    <h1>Charlie A. Johnson</h1>
+  <header class="header">
+    <div class="container">
+      <a class="name-link" href="/" aria-label="Home">
+        <h1 class="name">Charlie A. Johnson</h1>
+      </a>
 
-    <p><strong>Researcher</strong> · Birmingham, UK</p>
+      <div class="toggle">
+        <span class="toggle-label-text" aria-hidden="true">Theme</span>
+        <button id="themeToggle" class="toggle-button" type="button" aria-label="Toggle dark mode">
+          <span class="toggle-knob" aria-hidden="true"></span>
+        </button>
+      </div>
+    </div>
+  </header>
 
-    <p>
-      Decision systems, data, and feedback loops in complex environments.
-    </p>
+  <main class="main">
+    <article class="container">
+      <!-- Intro -->
+      <section class="section">
+        <p class="meta"><strong>Researcher</strong> · Birmingham, UK</p>
 
-    <p>
-      <a href="https://github.com/charlieajohnson">GitHub</a>
-      ·
-      <a href="/notes">Notes</a>
-    </p>
+        <p class="lead">
+          I work on formal models of complex systems under uncertainty — especially where
+          causality, time, and constraints shape what can be inferred and what actions remain feasible.
+          <span class="intro-period">.</span>
+          <span id="introEllipsis" class="intro-ellipsis"> … </span>
+          <button id="introMore" class="link-button" type="button" aria-expanded="false">More</button>
+        </p>
+
+        <div id="introMoreContent" class="intro-more" hidden>
+          <p>
+            Recent work includes: (i) interval-based representations of event time for intermittently connected
+            sensing systems (preserving provenance + queryable uncertainty), (ii) feasibility-set modelling of
+            coordination under latency via a set-valued mapping <span class="mono">ECB(C, L, θ)</span> and threshold exclusion
+            results, and (iii) testable hypotheses for coordination via continuous phase gradients.
+          </p>
+
+          <p class="links">
+            <a href="mailto:charlie.base@icloud.com">charlie.base@icloud.com</a>
+            <span class="dot">·</span>
+            <a href="https://github.com/charlieajohnson" target="_blank" rel="noreferrer">GitHub</a>
+            <span class="dot">·</span>
+            <a href="/notes">Notes</a>
+            <span class="dot">·</span>
+            <a href="/cv">CV</a>
+          </p>
+        </div>
+
+        <p class="links links-compact">
+          <a href="https://github.com/charlieajohnson" target="_blank" rel="noreferrer">GitHub</a>
+          <span class="dot">·</span>
+          <a href="/notes">Notes</a>
+          <span class="dot">·</span>
+          <a href="/cv">CV</a>
+        </p>
+      </section>
+
+      <!-- Focus -->
+      <section class="section">
+        <h2 class="h">Focus</h2>
+        <ul class="bullet">
+          <li>Formal modelling under uncertainty (invariants, bounds, partial orders)</li>
+          <li>Causal structure and effective connectivity (graphical + statistical reasoning)</li>
+          <li>Temporal coherence in distributed / intermittently connected sensing systems</li>
+          <li>Feasibility boundaries in coordination systems (latency thresholds, delay-sensitive dynamics)</li>
+        </ul>
+      </section>
+
+      <!-- Writing -->
+      <section class="section">
+        <h2 class="h">Writing</h2>
+        <ul class="bullet">
+          <li><a href="/notes">Notes</a> (working notes, models, and technical memos)</li>
+          <li><a href="/papers">Technical papers</a> (PDFs / preprints)</li>
+        </ul>
+      </section>
+
+      <!-- Selected technical papers -->
+      <section class="section">
+        <h2 class="h">Selected technical papers</h2>
+        <ul class="bullet">
+          <li>
+            <a href="/papers/temporal-coherence" class="paper-title">Temporal Coherence in Long-Horizon, Intermittently Connected Sensor Systems</a>
+            <span class="muted">— interval time, provenance, queryable uncertainty</span>
+          </li>
+          <li>
+            <a href="/papers/ecb-latency" class="paper-title">Latency and the Effective Capital Blueprint (ECB)</a>
+            <span class="muted">— feasibility sets, threshold exclusion, non-compensability</span>
+          </li>
+          <li>
+            <a href="/papers/phase-legibility" class="paper-title">Phase Legibility as Infrastructure</a>
+            <span class="muted">— continuous phase gradients, coordination friction, falsifiable tests</span>
+          </li>
+        </ul>
+
+        <p class="small muted">
+          If you’d prefer direct GitHub links instead of site paths, replace the URLs above with your repo/file URLs.
+        </p>
+      </section>
+
+      <!-- Projects -->
+      <section class="section">
+        <h2 class="h">Projects</h2>
+        <ul class="bullet">
+          <li><a href="https://github.com/charlieajohnson" target="_blank" rel="noreferrer">Code & repositories</a></li>
+          <li><a href="/notes">Research notes index</a></li>
+        </ul>
+      </section>
+
+      <!-- Research / Profiles -->
+      <section class="section">
+        <h2 class="h">Elsewhere</h2>
+        <ul class="bullet">
+          <li><a href="https://github.com/charlieajohnson" target="_blank" rel="noreferrer">GitHub</a></li>
+          <li><a href="https://www.linkedin.com/" target="_blank" rel="noreferrer">LinkedIn</a> <span class="muted">(add your profile link)</span></li>
+          <li><a href="#" target="_blank" rel="noreferrer">Google Scholar</a> <span class="muted">(optional)</span></li>
+        </ul>
+      </section>
+    </article>
   </main>
 
-  <footer>
-    <p><small>Last updated 2026</small></p>
+  <footer class="footer">
+    <div class="container">
+      <p class="small muted">Last updated 2026</p>
+    </div>
   </footer>
+
+  <script>
+    // -----------------------------
+    // Theme toggle (Amodei-inspired)
+    // -----------------------------
+    (function () {
+      const STORAGE_KEY = "theme";
+      const root = document.documentElement;
+      const btn = document.getElementById("themeToggle");
+
+      function applyTheme(theme, persist = true) {
+        // theme: "dark" | "light"
+        root.classList.toggle("mode-dark", theme === "dark");
+        root.classList.toggle("mode-light", theme === "light");
+        if (persist) localStorage.setItem(STORAGE_KEY, theme);
+        btn?.setAttribute("aria-pressed", theme === "dark" ? "true" : "false");
+      }
+
+      function getInitialTheme() {
+        const saved = localStorage.getItem(STORAGE_KEY);
+        if (saved === "dark" || saved === "light") return saved;
+
+        // OS preference
+        const prefersDark = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
+        return prefersDark ? "dark" : "light";
+      }
+
+      // init
+      applyTheme(getInitialTheme(), false);
+
+      // click toggle
+      btn?.addEventListener("click", () => {
+        const isDark = root.classList.contains("mode-dark");
+        applyTheme(isDark ? "light" : "dark", true);
+      });
+
+      // if user hasn't explicitly chosen, track OS changes
+      const mql = window.matchMedia ? window.matchMedia("(prefers-color-scheme: dark)") : null;
+      if (mql) {
+        mql.addEventListener("change", (e) => {
+          const saved = localStorage.getItem(STORAGE_KEY);
+          if (saved !== "dark" && saved !== "light") {
+            applyTheme(e.matches ? "dark" : "light", false);
+          }
+        });
+      }
+    })();
+
+    // -----------------------------
+    // Intro "More" expander
+    // -----------------------------
+    (function () {
+      const btn = document.getElementById("introMore");
+      const content = document.getElementById("introMoreContent");
+      const ellipsis = document.getElementById("introEllipsis");
+
+      if (!btn || !content || !ellipsis) return;
+
+      btn.addEventListener("click", () => {
+        const expanded = btn.getAttribute("aria-expanded") === "true";
+        btn.setAttribute("aria-expanded", String(!expanded));
+        content.hidden = expanded;
+        ellipsis.style.display = expanded ? "inline" : "none";
+        btn.textContent = expanded ? "More" : "Less";
+      });
+    })();
+  </script>
 </body>
 </html>
